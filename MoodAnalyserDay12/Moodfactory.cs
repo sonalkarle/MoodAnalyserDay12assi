@@ -8,10 +8,18 @@ namespace MoodanalyserDay12
 {
     public class Moodfactory
     {
+        /// <summary>
+        /// UC 4- Create creatmoodanalyserobject to create moodanalyser object
+        /// </summary>
+        /// <param name="className"></param>
+        /// <param name="constructor"></param>
+        /// <returns></returns>
         public static object CreateMoodAnalyserObject(string className, string constructor)
         {
+            //Pattern to mach classname with constructor
             string pattern = @" . " + constructor + "$";
             var result = Regex.Match(className, pattern);
+            //Computation
             if (result.Success)
             {
                 try
