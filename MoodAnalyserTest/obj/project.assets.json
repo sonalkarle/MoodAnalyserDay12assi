@@ -1225,6 +1225,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
+      },
+      "MoodAnalyserDay12/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/MoodAnalyserDay12.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MoodAnalyserDay12.dll": {}
+        }
       }
     }
   },
@@ -4613,11 +4623,17 @@
         "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "MoodAnalyserDay12/1.0.0": {
+      "type": "project",
+      "path": "../MoodAnalyserDay12/MoodAnalyserDay12.csproj",
+      "msbuildProject": "../MoodAnalyserDay12/MoodAnalyserDay12.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.NET.Test.Sdk >= 16.5.0",
+      "MoodAnalyserDay12 >= 1.0.0",
       "NUnit >= 3.12.0",
       "NUnit3TestAdapter >= 3.16.1"
     ]
@@ -4648,7 +4664,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\User\\source\\repos\\Advance C#-2\\MoodanalyserDay12\\MoodAnalyserDay12\\MoodAnalyserDay12\\MoodAnalyserDay12.csproj": {
+              "projectPath": "C:\\Users\\User\\source\\repos\\Advance C#-2\\MoodanalyserDay12\\MoodAnalyserDay12\\MoodAnalyserDay12\\MoodAnalyserDay12.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
