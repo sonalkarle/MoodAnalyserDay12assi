@@ -21,11 +21,11 @@ namespace MoodAnalyserTest
             obj.Equals(result);
         }
         [Test]
-        public void GivenMoodAnalyseClassNameShouldReturnMoodAnalyseObjectUsingParameterisedConstructor()
+        public void GivenMoodAnalyser_Reflection_return_MoodanalyserParametarized_object()
         {
-            object expected = new Moodanalyser("Happy");
-            object obj = Moodfactory.CreateMoodanalyseParameterizedConstructor("MoodAnalyserNameSpace.MoodAnalyserClass", "MoodAnalyserClass", "Happy");
-            expected.Equals(obj);
+            var obj = new Moodanalyser("I am in HAPPY mood");
+            object result = Moodfactory.CreateMoodanalyseParameterizedConstructor("MoodAnalyserDay12.Moodanalyser", "Moodanalyser", "Happy");
+            obj.Equals(result);
         }
         
       

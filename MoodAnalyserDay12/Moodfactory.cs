@@ -10,7 +10,7 @@ namespace MoodanalyserDay12
     {
         public static object CreateMoodAnalyserObject(string className, string constructor)
         {
-            string pattern = @" . " + constructor + "$";
+            string pattern = @"  " + constructor + "$";
             var result = Regex.Match(className, pattern);
             if (result.Success)
             {
@@ -32,16 +32,16 @@ namespace MoodanalyserDay12
                 throw new moodanalyserCustomeexception(moodanalyserCustomeexception.Exceptiontype.NO_SUCH_CONSTRUCTOR, "No such constructor found");
             }
         }
-        public static object CreateMoodanalyseParameterizedConstructor(string className, string constructorName, string message)
+        public static object CreateMoodanalyseParameterizedConstructor(string className, string constructor, string message)
         {
-            Type type = typeof(Moodanalyser);
+            Type type = typeof(MoodanalyserDay12.Moodanalyser);
             if (type.Name.Equals(className) || type.FullName.Equals(className))
             {
-                if (type.Name.Equals(constructorName))
+                if (type.Name.Equals(constructor))
                 {
-                    ConstructorInfo ctor = type.GetConstructor(new[] { typeof(string) });
-                    object instance = ctor.Invoke(new object[] { message });
-                    return instance;
+                    ConstructorInfo construct = type.GetConstructor(new[] { typeof(string) });
+                    object obj = construct.Invoke(new object[] { message });
+                    return obj;
                 }
                 else
                 {
