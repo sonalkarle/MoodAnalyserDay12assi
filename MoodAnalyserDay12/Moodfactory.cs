@@ -1,44 +1,43 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
 using System.Text.RegularExpressions;
+using System.Reflection;
+using System.Collections.Generic;
+using System.Text;
 
-namespace MoodanalyserDay12
+namespace MoodAnalyserDay12
 {
-    public class Moodfactory
+    public class MoodAnalyserfactory
     {
         /// <summary>
-        /// UC 4- Create creatmoodanalyserobject to create moodanalyser object
+        /// UC-4 CreateMoodAnalyse method create object of MoodAnalyse class 
         /// </summary>
         /// <param name="className"></param>
-        /// <param name="constructor"></param>
+        /// <param name="constructorName"></param>
         /// <returns></returns>
-        public static object CreateMoodAnalyserObject(string className, string constructor)
+        public static object CreateMoodAnalyse(string className, string constructorName)
         {
-            //Pattern to mach classname with constructor
-            string pattern = @" . " + constructor + "$";
-            var result = Regex.Match(className, pattern);
-            //Computation
+            string pattern = @"." + constructorName + "$";
+            Match result = Regex.Match(className, pattern);
+
             if (result.Success)
             {
                 try
                 {
-
-                    Type type = Type.GetType("MoodanalyserDay12.Moodanalyser");
-                    var res = Activator.CreateInstance(type);
-                    return res;
-
+                    Assembly executing = Assembly.GetExecutingAssembly();
+                    Type moodAnalyseType = executing.GetType(className);
+                    return Activator.CreateInstance(moodAnalyseType);
                 }
-                catch(NullReferenceException)
+                catch (ArgumentNullException)
                 {
-                    throw new moodanalyserCustomeexception(moodanalyserCustomeexception.Exceptiontype.NO_SUCH_CLASS, "No such class found");
+                    throw new moodanalysercustomException(moodanalysercustomException.ExceptionType.NO_SUCH_CLASS, "Class not found");
+
                 }
             }
             else
             {
-                throw new moodanalyserCustomeexception(moodanalyserCustomeexception.Exceptiontype.NO_SUCH_CONSTRUCTOR, "No such constructor found");
+                throw new moodanalysercustomException(moodanalysercustomException.ExceptionType.NO_SUCH_METHOD, "Method not found");
             }
         }
+
     }
 }
