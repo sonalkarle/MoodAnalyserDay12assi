@@ -71,7 +71,7 @@ namespace NUnitTestProject
         /// TC-5.1  Given MoodAnalyse Class Name Should Return MoodAnalyser Object
         /// </summary>
         [Test]
-        public void MoodAnalyserClassName_ShouldReturnMoodAnalyserObject_UsingParametrizedConstructor()
+        public void MoodAnalyserClassName_ShouldReturn_MoodAnalyserObject_UsingParametrizedConstructor()
         {
             object expected = new MoodAnalyser("HAPPY");
             object obj = MoodAnalyserfactory.CreateMoodAnalyseUsingParameterizedConstructor("MoodAnalyserDay12.MoodAnalyser", "MoodAnalyser");
@@ -82,7 +82,7 @@ namespace NUnitTestProject
         /// TC-5.2  Given MoodAnalyse Class Name When Improper Should Throw Exception
         /// </summary>
         [Test]
-        public void MoodAnalyserClassName_WhenImproper_UsingParametrizedConstructor_ShouldThrowExcpetion()
+        public void MoodAnalyserClassName_Improper_UsingParametrizedConstructor_ShouldThrow_Excpetion()
         {
             string expected = "Class not found";
             try
@@ -99,7 +99,7 @@ namespace NUnitTestProject
         /// TC-5.3  Given MoodAnalyse Class Name When Constructor is Improper Should Throw Exception
         /// </summary>
         [Test]
-        public void MoodAnalyserClassName_WhenConstructorIsImproper_UsingParametrizedConstructor_ShouldThrowExcpetion()
+        public void MoodAnalyserClassName_ConstructorIsImproper_UsingParametrizedConstructor_Should_ThrowExcpetion()
         {
             string expected = "Method not found";
             try
@@ -111,24 +111,5 @@ namespace NUnitTestProject
                 Assert.AreEqual(expected, exception.Message);
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
