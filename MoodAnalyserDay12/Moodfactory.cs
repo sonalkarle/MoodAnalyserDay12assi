@@ -16,15 +16,16 @@ namespace MoodAnalyserDay12
         /// <returns></returns>
         public static object CreateMoodAnalyse(string className, string constructorName)
         {
+            //Create pattern to check class name and constructor name are same or not
             string pattern = @"." + constructorName + "$";
             Match result = Regex.Match(className, pattern);
-
+            //Computation
             if (result.Success)
             {
                 try
                 {
-                    Assembly executing = Assembly.GetExecutingAssembly();
-                    Type moodAnalyseType = executing.GetType(className);
+                    Assembly assembly = Assembly.GetExecutingAssembly();
+                    Type moodAnalyseType = assembly.GetType(className);
                     return Activator.CreateInstance(moodAnalyseType);
                 }
                 catch (ArgumentNullException)
