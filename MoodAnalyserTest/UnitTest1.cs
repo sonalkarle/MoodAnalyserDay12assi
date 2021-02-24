@@ -116,7 +116,7 @@ namespace NUnitTestProject
         /// TC-6.1  Given Happy Message Using Using Reflector When Proper Should Return Hppy Name Should Return MoodAnalyser Object
         /// </summary>
         [Test]
-        public void GivenHppyMessge_WhenProper_ShouldReturnHppy()
+        public void GivenHppyMessge_Proper_ShouldReturnHppy()
         {
             string expected = "HAPPY";
             string mood = MoodAnalyserfactory.InvokeAnalyseMood("HAPPY", "AnalyserMood");
