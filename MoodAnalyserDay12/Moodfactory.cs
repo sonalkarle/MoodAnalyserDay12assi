@@ -53,8 +53,8 @@ namespace MoodAnalyserDay12
             {
                 if (type.Name.Equals(constructorName))
                 {
-                    ConstructorInfo ctor = type.GetConstructor(new[] { typeof(string) });
-                    object instance = ctor.Invoke(new object[] { "HAPPY" });
+                    ConstructorInfo construct = type.GetConstructor(new[] { typeof(string) });
+                    object instance = construct.Invoke(new object[] { "HAPPY" });
                     return instance;
                 }
 
