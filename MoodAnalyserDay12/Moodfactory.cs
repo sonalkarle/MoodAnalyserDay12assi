@@ -36,7 +36,7 @@ namespace MoodAnalyserDay12
             }
             else
             {
-                throw new moodanalysercustomException(moodanalysercustomException.ExceptionType.NO_SUCH_METHOD, "Method not found");
+                throw new moodanalysercustomException(moodanalysercustomException.ExceptionType.NO_SUCH_CONSTRUCTOR, "Constructor not found");
             }
         }
 
