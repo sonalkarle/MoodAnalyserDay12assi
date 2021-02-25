@@ -52,7 +52,7 @@ namespace NUnitTestProject
         public void MoodAnalyserClassName_ConstructorIsImproper_Should_ThrowMoodAnalyserException()
         {
             object obj = null;
-            string expected = "Method not found";
+            string expected = "Constructor not found";
             try
             {
                 obj = MoodAnalyserfactory.CreateMoodAnalyse("MoodAnalyserDay12.MoodAnalyser", "AnalyserMood");
@@ -98,7 +98,7 @@ namespace NUnitTestProject
         [Test]
         public void MoodAnalyserClassName_ConstructorIsImproper_UsingParametrizedConstructor_Should_ThrowExcpetion()
         {
-            string expected = "Method not found";
+            string expected = "Constructor not found";
             try
             {
                 object obj = MoodAnalyserfactory.CreateMoodAnalyseUsingParameterizedConstructor("MoodAnalyserDay12.MoodAnalyser", "Mood");
@@ -126,7 +126,7 @@ namespace NUnitTestProject
         [Test]
         public void GivenHppyMessge_WhenIMProperMethod_Should_ThrowException()
         {
-            string expected = "Method not found";
+            string expected = "Constructor not found";
             try
             {
                 string mood = MoodAnalyserfactory.InvokeAnalyseMood("HAPPY", "Analyser");
