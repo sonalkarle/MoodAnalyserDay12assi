@@ -10,7 +10,7 @@ namespace MoodAnalyserDay12
         public enum ExceptionType
         {
             NO_SUCH_CLASS,
-            NO_SUCH_METHOD,
+            NO_SUCH_CONSTRUCTOR,
             EMPTY_MESSAGE,
             NULL_MESSAGE,
         }
