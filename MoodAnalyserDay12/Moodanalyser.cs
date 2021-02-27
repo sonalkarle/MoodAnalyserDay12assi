@@ -28,7 +28,7 @@ namespace MoodAnalyserDay12
         /// <summary>
         /// Method to analyse mood with custom exception
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
         public string AnalyserMood()
         {
             try
